@@ -13,6 +13,7 @@ class TPQueue {
   Node* head;
 
  public:
+    TPQueue() : head(nullptr) {}
     bool isEmpty() const {
       return head == nullptr;
     }
