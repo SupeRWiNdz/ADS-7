@@ -30,7 +30,7 @@ class TPQueue {
          head = temp;
         } else {
          Node* cur = head;
-         while (value.prior <= cur->next->x.prior && cur->next != nullptr)
+         while (cur->next != nullptr && value.prior <= cur->next->x.prior)
           cur = cur->next;
          Node* temp = new Node;
          temp->x = value;
@@ -49,7 +49,6 @@ class TPQueue {
             return value;
         }
     }
-    
     ~TPQueue() {
         while (head != nullptr)
             pop();
