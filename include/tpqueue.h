@@ -50,11 +50,6 @@ class TPQueue {
             head = temp;
             return value;
         }
-    ~TPQueue() {
-        while (head != nullptr)
-            pop();
-    }
-  }
     }
     struct SYM {
         char ch;
