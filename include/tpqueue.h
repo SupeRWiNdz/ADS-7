@@ -49,6 +49,12 @@ class TPQueue {
             return value;
         }
     }
+    
+    ~TPQueue() {
+        while (head != nullptr)
+            pop();
+    }
+    
     struct SYM {
         char ch;
         int prior;
