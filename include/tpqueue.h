@@ -22,7 +22,7 @@ class TPQueue {
             Node* temp = new Node;
             temp->x = value;
             temp->next = nullptr;
-            head=temp;
+            head = temp;
         } else if (head->x.prior < value.prior) {
          Node* temp = new Node;
          temp->x = value;
@@ -35,7 +35,7 @@ class TPQueue {
          Node* temp = new Node;
          temp->x = value;
          temp->next = current->next;
-         cur->next = temp;
+         current->next = temp;
         }
     }
     T& pop() {
