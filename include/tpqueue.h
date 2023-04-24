@@ -9,13 +9,14 @@ class TPQueue {
   struct Node {
         T x;
         Node* next;
-     };
+  };
   Node* head;
+
  public:
     bool isEmpty() const {
       return head == nullptr;
     }
-  void push(T& x) {
+  void push(const T& x) {
     if (isEmpty()) {
       Node *head = new Node;
       head->x = x;
@@ -42,7 +43,7 @@ class TPQueue {
     }
     return;
   }
-};
+}
 
 struct SYM {
   char ch;
