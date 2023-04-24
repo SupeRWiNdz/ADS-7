@@ -17,20 +17,20 @@ class TPQueue {
     bool isEmpty() const {
         return head == nullptr;
     }
-    void push(const T& x) {
+    void push(const T& value) {
         if (isEmpty()) {
             Node* temp = new Node;
-            temp->x = x;
+            temp->x = value;
             temp->next = nullptr;
             return;
         } else {
             Node* current = head;
-            while (x.prior <= current->next->x.prior && current != nullptr)
+            while (value.prior < current->next->x.prior && current != nullptr)
                 current = current->next;
             Node* temp = new Node;
             temp->next = current->next;
             current->next = temp;
-            temp->x = x;
+            temp->x = value;
             return;
         }
     }
