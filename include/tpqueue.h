@@ -22,7 +22,7 @@ class TPQueue {
             Node* temp = new Node;
             temp->x = x;
             temp->next = nullptr;
-            return temp;
+            return;
         } else {
             Node* current = head;
             while (x.prior <= current->next->x.prior && current != nullptr)
@@ -44,7 +44,6 @@ class TPQueue {
             head = temp;
             return x;
         }
-        return;
     }
     struct SYM {
         char ch;
