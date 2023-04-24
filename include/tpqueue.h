@@ -20,18 +20,24 @@ class TPQueue {
     void push(const T& value) {
         if (isEmpty()) {
             Node* temp = new Node;
-            temp->x = x;
+            temp->x = value;
             temp->next = nullptr;
             return;
+        } else if (head->x.prior < value.prior) {
+         Node* temp = new Node;
+         temp->x = value;
+         temp->next = head;
+         head=temp
+         return;
         } else {
-            Node* current = head;
-            while (value.prior < current->next->x.prior && current != nullptr)
-                current = current->next;
-            Node* temp = new Node;
-            temp->next = current->next;
-            current->next = temp;
-            temp->x = value;
-            return;
+         Node* current = head;
+         while (value.prior =< current->next->x.prior && current->next != nullptr)
+          current = current->next;
+         Node* temp = new Node;
+         temp->x = value;
+         temp->next = current->next;
+         current->next = temp;
+         return;
         }
     }
     T& pop() {
@@ -40,7 +46,7 @@ class TPQueue {
         } else {
             Node* temp = head->next;
             T value = head->x;
-            delete head;
+            delete(head);
             head = temp;
             return value;
         }
