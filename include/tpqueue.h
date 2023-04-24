@@ -50,11 +50,9 @@ class TPQueue {
             head = temp;
             return value;
         }
-     ~TPQueue() {
-      while (head) {
-       Node* temp = head->next;
-       delete head;
-       head = temp;
+    ~TPQueue() {
+        while (head != nullptr)
+            pop();
     }
   }
     }
