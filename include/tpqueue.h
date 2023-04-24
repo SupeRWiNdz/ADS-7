@@ -34,7 +34,7 @@ class TPQueue {
           current = current->next;
          Node* temp = new Node;
          temp->x = value;
-         temp->next = cur->next;
+         temp->next = current->next;
          cur->next = temp;
         }
     }
