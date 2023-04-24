@@ -29,16 +29,16 @@ class TPQueue {
          temp->next = head;
          head = temp;
         } else {
-         Node* current = head;
-         while (value.prior <= current->next->x.prior && current->next != nullptr)
-          current = current->next;
+         Node* cur = head;
+         while (value.prior <= cur->next->x.prior && cur->next != nullptr)
+          cur = cur->next;
          Node* temp = new Node;
          temp->x = value;
-         temp->next = current->next;
-         current->next = temp;
+         temp->next = cur->next;
+         cur->next = temp;
         }
     }
-    T& pop() {
+    T pop() {
         if (isEmpty()) {
             throw std::string("Empty!");
         } else {
