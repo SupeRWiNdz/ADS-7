@@ -27,7 +27,7 @@ class TPQueue {
          Node* temp = new Node;
          temp->x = value;
          temp->next = head;
-         head = temp
+         head = temp;
          return;
         } else {
          Node* current = head;
