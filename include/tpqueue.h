@@ -5,50 +5,52 @@
 
 template<typename T>
 class TPQueue {
- private:
-  struct Node {
+private:
+    struct Node {
         T x;
         Node* next;
-  };
-  Node* head;
+    };
+    Node* head;
 
- public:
+public:
     TPQueue() : head(nullptr) {}
     bool isEmpty() const {
-      return head == nullptr;
+        return head == nullptr;
     }
-  void push(const T& x) {
-    if (isEmpty()) {
-      Node *head = new Node;
-      head->x = x;
-    } else {
-      Node* current = head;
-      while (current->x.prior <= current->next->x.prior && current != nullptr) {
-        current = current->next;
+    void push(const T& x) {
+        if (isEmpty()) {
+            Node* head = new Node;
+            head->x = x;
+        }
+        else {
+            Node* current = head;
+            while (current->x.prior <= current->next->x.prior && current != nullptr) {
+                current = current->next;
+            }
+            Node* temp = new Node;
+            temp->next = current->next;
+            current->next = temp;
+            temp->x = x;
+            return;
+        }
     }
-      Node* temp = new Node;
-      temp->next = current->next;
-      current->next = temp;
-      temp->x = x;
-  return;
-  }
-  T& pop() {
-    if (isEmpty()) {
-        throw std::string("Empty!");
-    } else {
-        res = head->x;
-        Node* temp = head->next;
-        delete head;
-        head = temp;
-        return res;
+    T& pop() {
+        if (isEmpty()) {
+            throw std::string("Empty!");
+        }
+        else {
+            Node* temp = head->next;
+            T x = head->x;
+            delete(head);
+            head = temp;
+            return x;
+        }
+        return;
     }
-    return;
-  }
-}
-
-struct SYM {
-  char ch;
-  int prior;
+    struct SYM {
+        char ch;
+        int prior;
+    };
 };
 
 #endif  // INCLUDE_TPQUEUE_H_
