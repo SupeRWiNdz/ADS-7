@@ -5,28 +5,28 @@
 
 template<typename T>
 class TPQueue {
-private:
+ private:
     struct Node {
         T x;
         Node* next;
     };
     Node* head;
 
-public:
+ public:
     TPQueue() : head(nullptr) {}
     bool isEmpty() const {
         return head == nullptr;
     }
     void push(const T& x) {
         if (isEmpty()) {
-            Node* head = new Node;
-            head->x = x;
-        }
-        else {
+            Node* temp = new Node;
+            temp->x = x;
+            temp->next = nullptr;
+            return temp;
+        } else {
             Node* current = head;
-            while (current->x.prior <= current->next->x.prior && current != nullptr) {
+            while (x.prior <= current->next->x.prior && current != nullptr)
                 current = current->next;
-            }
             Node* temp = new Node;
             temp->next = current->next;
             current->next = temp;
@@ -37,8 +37,7 @@ public:
     T& pop() {
         if (isEmpty()) {
             throw std::string("Empty!");
-        }
-        else {
+        } else {
             Node* temp = head->next;
             T x = head->x;
             delete(head);
