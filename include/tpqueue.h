@@ -22,6 +22,7 @@ class TPQueue {
             Node* temp = new Node;
             temp->x = value;
             temp->next = nullptr;
+            head=temp;
             return;
         } else if (head->x.prior < value.prior) {
          Node* temp = new Node;
