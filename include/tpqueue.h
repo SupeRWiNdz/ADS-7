@@ -51,7 +51,6 @@ class TPQueue {
        head = temp;
     }
   }
-};
     }
     struct SYM {
         char ch;
