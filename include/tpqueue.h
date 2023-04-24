@@ -27,11 +27,11 @@ class TPQueue {
          Node* temp = new Node;
          temp->x = value;
          temp->next = head;
-         head=temp
+         head = temp
          return;
         } else {
          Node* current = head;
-         while (value.prior =< current->next->x.prior && current->next != nullptr)
+         while (value.prior <= current->next->x.prior && current->next != nullptr)
           current = current->next;
          Node* temp = new Node;
          temp->x = value;
