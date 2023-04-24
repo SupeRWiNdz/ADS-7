@@ -39,10 +39,10 @@ class TPQueue {
             throw std::string("Empty!");
         } else {
             Node* temp = head->next;
-            T x = head->x;
-            delete(head);
+            T value = head->x;
+            delete head;
             head = temp;
-            return x;
+            return value;
         }
     }
     struct SYM {
