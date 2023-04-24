@@ -20,7 +20,7 @@ class TPQueue {
     void push(const T& value) {
         if (isEmpty()) {
             Node* temp = new Node;
-            temp->x = value;
+            temp->x = x;
             temp->next = nullptr;
             return;
         } else {
